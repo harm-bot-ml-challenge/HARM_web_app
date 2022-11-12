@@ -39,7 +39,7 @@ ludwig
 ```
 
 ## How much we have implemented and will be implementing?
-- Built a real worl Web Application, which takes an input of a YouTube Video URL and runs our algorithms of fetching and retrieving the information on it.
+- Built a real world Web Application, which takes an input of a YouTube Video URL and runs our models and algorithms of fetching and showcasing the information on it.
 - Made a dataset generation file, which generates the dataset as per our requirements.
 - Made the model files, to run it on the datasets generated.
 - About to practice and apply our knowledge to enhance the User experience of our website and market the website to get it reach out to more and more audience.
