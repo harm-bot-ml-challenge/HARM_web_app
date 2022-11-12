@@ -56,6 +56,16 @@ ludwig
 ## Are we facing any issues?
 - Till now not faced any big problems, everything is going as planned. Hope of that in future too.
 
+## Project Members with their contributions to this project
+
+1. __Harshul Nanda__ - Web hosting, Image and Text Dataset Generation
+
+2. __Abhijeet Saroha__ - Streamlit and Web Development 
+
+3. __Rishabh Sagar__ - Image processing and Image classification model
+
+4. __Mayank Arora__ - Textual data processing and Text classification model
+
 ## Why this project is different from other ones? What unique features does this project have?
 Our HARM website provides the following features which makes it different from other projects.
 - User can get the prediction of whether a YouTube video is educational or non educational by entering the Youtube video url. If the video is educational, we apply category and sub-category model as per the problem statement returning the probability percentage bar graph 📊 of the predictions.
@@ -63,11 +73,3 @@ Our HARM website provides the following features which makes it different from o
 - User can also search results for custom number of videos by entering the keyword in the text field and get the prediction as per the problem statement of each of the video searched.
 - User can get the prediction graph as mentioned before of all the videos in a YouTube playlist by just entering the Playlist URL.
 - We also provide a feature which apply our education or non educational classification model to each of the dialogues of a video (of which subtitles are available), predicting the percentage of Educational content that video provides.
-
-## Project Members with their contributions to this project
-1. __Harshul Nanda__ - Web hosting, Image and Text Dataset Generation
-2. __Abhijeet Saroha__ - Streamlit and Web Development 
-3. __Rishabh Sagar__ - Image processing and Image classification model
-4. __Mayank Arora__ - Textual data processing and Text classification model
-
-Our tensorflow models files took more than 1gb of space which the github limits us to, so for that we needed to setup git large files storage which is allowed once per github user, so, if you are wondering why the other team members are not collaborating to this repo, this is because we created a combine email where we setup our Google colab files and Google drive, and used the git large files storage once in that account. So this is the new repo created by me, Harshul Nanda in this account.
