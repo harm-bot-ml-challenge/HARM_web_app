@@ -5,7 +5,7 @@ HARM, a ThinkBeyondExams intern team, aims to expand the world of AI with a litt
 Using the Python programming language and various Machine Learning concepts to create a Text classification and Image classification model which classifies a YouTube Video as Educational and cat- egorises it under category and sub-category as per the categories list of Beyond Exams Website.
 
 
-## Problem Statement
+## Problem Statement (Theme: YouTube video classification)
 A) Given a Youtube video:
 1. Determine if it is an educational video or not.
 2. Determine which category or subcategory of Beyon- dExam would it belong to.  
