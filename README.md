@@ -56,10 +56,10 @@ ludwig
 ## Are we facing any issues?
 - Till now not faced any big problems, everything is going as planned. Hope of that in future too.
 
-## Project Members
-1. Harshul Nanda
-2. Abhijeet Saroha
-3. Rishabh Sagar
-4. Mayank Arora
+## Project Members with their contributions to this project
+1. __Harshul Nanda__ - Web hosting, Image and Text Dataset Generation
+2. __Abhijeet Saroha__ - Streamlit and Web Development 
+3. __Rishabh Sagar__ - Image processing and Image classification model
+4. __Mayank Arora__ - Textual data processing and Text classification model
 
 Our tensorflow models files took more than 1gb of space which the github limits us to, so for that we needed to setup git large files storage which is allowed once per github user, so, if you are wondering why the other team members are not collaborating to this repo, this is because we created a combine email where we setup our Google colab files and Google drive, and used the git large files storage once in that account. So this is the new repo created by me, Harshul Nanda in this account.
