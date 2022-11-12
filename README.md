@@ -56,6 +56,14 @@ ludwig
 ## Are we facing any issues?
 - Till now not faced any big problems, everything is going as planned. Hope of that in future too.
 
+## Why this project is different from other ones? What unique features does this project have?
+Our HARM website provides the following features which makes it different from other projects.
+- User can get the prediction of whether a YouTube video is educational or non educational by entering the Youtube video url. If the video is educational, we apply category and sub-category model as per the problem statement returning the probability percentage bar graph 📊 of the predictions.
+- User can get the channel statistics (custom number of top videos of a channel) by entering the any of that channel's video link. The channel statistics are in the form of a dataframe with attributes including title, description, original category, educational or not and predicted category by our model.
+- User can also search results for custom number of videos by entering the keyword in the text field and get the prediction as per the problem statement of each of the video searched.
+- User can get the prediction graph as mentioned before of all the videos in a YouTube playlist by just entering the Playlist URL.
+- We also provide a feature which apply our education or non educational classification model to each of the dialogues of a video (of which subtitles are available), predicting the percentage of Educational content that video provides.
+
 ## Project Members with their contributions to this project
 1. __Harshul Nanda__ - Web hosting, Image and Text Dataset Generation
 2. __Abhijeet Saroha__ - Streamlit and Web Development 
