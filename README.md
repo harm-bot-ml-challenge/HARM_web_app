@@ -48,6 +48,7 @@ ludwig
 [Github Project Link](https://github.com/repository_invitations/195771281/accept)  
 [Demo Link](https://huggingface.co/spaces/HarshulNanda/HARM_ML_App_ludwig)  
 [Video Demo Link](https://drive.google.com/file/d/1HAHv_opmFJMg6x0QkNskN0S2eVQM4NyZ/view?usp=share_link) 
+[Twilio Demo Link](https://drive.google.com/file/d/1_QmGaWxVaXT2-Hu81Jb2g7Hk4PX9g_Le/view?usp=share_link)
 
 ## How do we plan to work on the remarks provided in the ideation stage evaluation?
 - Updating the Readme.md file as per guidelines.
@@ -55,6 +56,9 @@ ludwig
 
 ## Are we facing any issues?
 - Till now not faced any big problems, everything is going as planned. Hope of that in future too.
+
+## How we have used Twilio in our project?
+- We have implemented a feature where a user can get the channel statistics (custom number of top videos of a channel) by entering the any of that channel's video link. The channel statistics are in the form of a downloadable dataframe with attributes including title, description, original category, educational or not and predicted category by our model. If the dataset generation task takes time, you will be informed by a message on your contact number you entered.
 
 ## Project Members with their contributions to this project
 
@@ -69,7 +73,7 @@ ludwig
 ## Why this project is different from other ones? What unique features does this project have?
 Our HARM website provides the following features which makes it different from other projects.
 - User can get the prediction of whether a YouTube video is educational or non educational by entering the Youtube video url. If the video is educational, we apply category and sub-category model as per the problem statement returning the probability percentage bar graph 📊 of the predictions.
-- User can get the channel statistics (custom number of top videos of a channel) by entering the any of that channel's video link. The channel statistics are in the form of a dataframe with attributes including title, description, original category, educational or not and predicted category by our model.
+- User can get the channel statistics (custom number of top videos of a channel) by entering the any of that channel's video link. The channel statistics are in the form of a downloadable dataframe with attributes including title, description, original category, educational or not and predicted category by our model. If the dataset generation task takes time, you will be informed by a message on your contact number you entered.
 - User can also search results for custom number of videos by entering the keyword in the text field and get the prediction as per the problem statement of each of the video searched.
 - User can get the prediction graph as mentioned before of all the videos in a YouTube playlist by just entering the Playlist URL.
 - We also provide a feature which apply our education or non educational classification model to each of the dialogues of a video (of which subtitles are available), predicting the percentage of Educational content that video provides.
