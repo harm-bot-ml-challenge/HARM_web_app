@@ -6,6 +6,7 @@ from youtube_dl import YoutubeDL
 from stqdm import stqdm
 from PIL import Image
 from io import BytesIO
+from twilio.rest import Client 
 
 from colors import colorOf
 from categoryPredictor import predictCategoryFor
@@ -13,6 +14,7 @@ from statsViewer import generate_channel_video_data
 from eduContentPredictor import eduContentPrediction
 from youtubesearchpython import Video, ResultMode, VideosSearch, Playlist, ChannelsSearch
 
+import twilioWork
 import streamlit as st
 import base64
 import pandas as pd
@@ -24,11 +26,10 @@ import numpy as np
 import youtube_dl
 
 st.set_page_config(page_title="HARM Bot", page_icon=Image.open("./assets/harmLogo.ico"))
-# primaryColor = toml.load(".streamlit/config.toml")['theme']['primaryColor']
+primaryColor = toml.load(".streamlit/config.toml")['theme']['primaryColor']
 s = f"""
 <style>
-body {{ background-colour: #160000; }}
-div.stButton > button:first-child {{ border: 1px solid #FFF; border-radius:20px 20px 20px 20px; background: none;}}
+div.stButton > button:first-child {{ border: 1px solid {primaryColor}; border-radius:20px 20px 20px 20px; background: none;}}
 div.stButton > button:first-child:hover {{
     background: #E11D48;
     color: white;
@@ -84,7 +85,7 @@ def add_sidebar_menu():
     page_bg_img = """
     <style>
     [data-testid="stSidebar"] > div:first-child {
-        background-color: yellow;
+        background-image: url("https://raw.githubusercontent.com/Harshul-18/Harshul-Site/main/sidebarBackground.jpg");
         background-position: center;
     }
     </style>
@@ -124,17 +125,17 @@ def bodyOfPage1():
                         f"<h5>This video comes under the {isCat} category.</h5>",
                         unsafe_allow_html=True,
                     )
-                    plt.figure(facecolor="#ffffff")
-                    fig, x = plt.subplots(facecolor="#ffffff")
+                    plt.figure(facecolor="#160000")
+                    fig, x = plt.subplots(facecolor="#160000")
                     p = x.barh([i for i in range(1, len(catArr)+1)], probArr, tick_label=catArr, color="#E11D48")
-                    x.set_facecolor("#ffffff")
-                    x.spines['bottom'].set_color('black')
-                    x.spines['top'].set_color('black') 
-                    x.spines['right'].set_color('black')
-                    x.spines['left'].set_color('black')
-                    x.tick_params(axis='x', colors='black')
-                    x.tick_params(axis='y', colors='black')
-                    x.bar_label(p, label_type="center", color="black")
+                    x.set_facecolor("#160000")
+                    x.spines['bottom'].set_color('white')
+                    x.spines['top'].set_color('white') 
+                    x.spines['right'].set_color('white')
+                    x.spines['left'].set_color('white')
+                    x.tick_params(axis='x', colors='white')
+                    x.tick_params(axis='y', colors='white')
+                    x.bar_label(p, label_type="center", color="white")
                     st.pyplot(fig)
                 else:
                     st.markdown(
@@ -166,12 +167,22 @@ def bodyOfPage1():
 # MARK: Adding body for page 2 containing the fields for channel's statistics
 def bodyOfPage2():
     youtubeChannelUrl = st.text_input("Enter the Video URL to get the stats of that channel", value="", type="default", help="Enter the URL of the Youtube Video you want me to show the data of its channel.")
+    contact = st.text_input("Enter your number with country code", value="", type="default")
     # youtubeChannelUrl += "/videos"
     number = st.number_input('How many videos to analyse?', min_value=5, step=5, help="Enter the number or click the + or - buttons to increase or decrease the number with step size 5 for getting the data for the number of videos you entered.")
-    if len(youtubeChannelUrl) >= 1:
+    if len(youtubeChannelUrl) >= 1 and len(contact) >= 1:
+        account_sid = 'AC106ac5daf081d1e60ac9add2cd46fd85' 
+        auth_token = '15c483d9a5db54a140947a70c3855538' 
+        client = Client(account_sid, auth_token) 
         try:
             with st.expander("View Statistics"):
-                generate_channel_video_data(of_channel=youtubeChannelUrl, with_number_of_videos=number)            
+                generate_channel_video_data(of_channel=youtubeChannelUrl, with_number_of_videos=number)     
+                st.error("Message has been sent to your number")
+                message = client.messages.create(         
+                    body="Your Channel Dataset is generated. Kindly visit that our site\'s tab to download the csv file.",
+                    from_='+14782495592',
+                    to=contact,
+                )       
         except Exception as e:
             st.markdown(f"{e}, Please enter the correct channel ID")
 
@@ -199,17 +210,17 @@ def bodyOfPage3():
                         f"<h5>This video comes under the {isCat} category.</h5>",
                         unsafe_allow_html=True,
                     )
-                    plt.figure(facecolor="#ffffff")
-                    fig, x = plt.subplots(facecolor="#ffffff")
+                    plt.figure(facecolor="#160000")
+                    fig, x = plt.subplots(facecolor="#160000")
                     p = x.barh([i for i in range(1, len(catArr)+1)], probArr, tick_label=catArr, color="#E11D48")
-                    x.set_facecolor("#ffffff")
-                    x.spines['bottom'].set_color('black')
-                    x.spines['top'].set_color('black') 
-                    x.spines['right'].set_color('black')
-                    x.spines['left'].set_color('black')
-                    x.tick_params(axis='x', colors='black')
-                    x.tick_params(axis='y', colors='black')
-                    x.bar_label(p, label_type="center", color="black")
+                    x.set_facecolor("#160000")
+                    x.spines['bottom'].set_color('white')
+                    x.spines['top'].set_color('white') 
+                    x.spines['right'].set_color('white')
+                    x.spines['left'].set_color('white')
+                    x.tick_params(axis='x', colors='white')
+                    x.tick_params(axis='y', colors='white')
+                    x.bar_label(p, label_type="center", color="white")
                     st.pyplot(fig)
                 else:
                     st.markdown(
@@ -239,17 +250,17 @@ def bodyOfPage4():
                                 f"<h5>This video comes under the {isCat} category.</h5>",
                                 unsafe_allow_html=True,
                             )
-                            plt.figure(facecolor="#ffffff")
-                            fig, x = plt.subplots(facecolor="#ffffff")
+                            plt.figure(facecolor="#160000")
+                            fig, x = plt.subplots(facecolor="#160000")
                             p = x.barh([i for i in range(1, len(catArr)+1)], probArr, tick_label=catArr, color="#E11D48")
-                            x.set_facecolor("#ffffff")
-                            x.spines['bottom'].set_color('black')
-                            x.spines['top'].set_color('black') 
-                            x.spines['right'].set_color('black')
-                            x.spines['left'].set_color('black')
-                            x.tick_params(axis='x', colors='black')
-                            x.tick_params(axis='y', colors='black')
-                            x.bar_label(p, label_type="center", color="black")
+                            x.set_facecolor("#160000")
+                            x.spines['bottom'].set_color('white')
+                            x.spines['top'].set_color('white') 
+                            x.spines['right'].set_color('white')
+                            x.spines['left'].set_color('white')
+                            x.tick_params(axis='x', colors='white')
+                            x.tick_params(axis='y', colors='white')
+                            x.bar_label(p, label_type="center", color="white")
                             st.pyplot(fig)
                         else:
                             st.markdown(
@@ -277,11 +288,13 @@ font-weight: bold;
 background-color: transparent;
 text-decoration: none;
 }
+
 a:hover,  a:active {
 color: red;
 background-color: transparent;
 text-decoration: none;
 }
+
 .footer {
 position: fixed;
 left: 0;
@@ -291,6 +304,7 @@ background-color: transparent;
 color: white;
 text-align: center;
 }
+
 </style>
 <div class="footer">
 <p>Copyright © <a href="https://www.linkedin.com/company/82157293/admin/">HARM</a>, Designed by <a href="https://harshul-18.github.io/Harshul-Site/">Harshul</a>.</p>
