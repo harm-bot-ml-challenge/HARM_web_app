@@ -19,4 +19,5 @@ youtube_search_python==1.6.6
 scrapetube
 git+https://github.com/ludwig-ai/ludwig.git 
 youtube-dl
+twilio
 scikit-learn
