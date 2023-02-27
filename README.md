@@ -46,8 +46,8 @@ ludwig
 
 ## Live demo link and the Video demo
 [Github Project Link](https://github.com/repository_invitations/195771281/accept)  
-[Demo Link](https://huggingface.co/spaces/HarshulNanda/HARM_ML_App_ludwig)  
-[Video Demo Link](https://drive.google.com/file/d/1HAHv_opmFJMg6x0QkNskN0S2eVQM4NyZ/view?usp=share_link)   
+[Demo Link](https://huggingface.co/spaces/HarshulNanda/HARM_ML_web_app)  
+[Video Demo Link](https://www.youtube.com/watch?v=P49BkpF17ts)   
 [Twilio Demo Link](https://drive.google.com/file/d/1_QmGaWxVaXT2-Hu81Jb2g7Hk4PX9g_Le/view?usp=share_link)
 
 ## How do we plan to work on the remarks provided in the ideation stage evaluation?
